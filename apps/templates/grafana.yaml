@@ -1,0 +1,81 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: grafana-secret
+  namespace: monitoring
+spec:
+  encryptedData:
+    admin-password: {{ .Values.grafana.encryptedPassword }}
+    admin-user: {{ .Values.grafana.encryptedUsername }}
+  template:
+    metadata:
+      creationTimestamp: null
+      name: grafana-secret
+      namespace: monitoring
+    type: Opaque
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: 'https://grafana.github.io/helm-charts'
+    chart: grafana
+    targetRevision: {{ .Values.grafana.targetRevision }}
+    helm:
+      values: |
+        ingress:
+          enabled: true
+          ingressClassName: traefik
+          hosts:
+            - grafana.{{ .Values.domain }}
+        persistence:
+          enabled: true
+          storageClassName: longhorn
+          size: {{ .Values.grafana.diskSize }}
+        admin:
+          existingSecret: grafana-secret
+        dashboardProviders:
+          dashboardproviders.yaml:
+            apiVersion: 1
+            providers:
+            - name: 'default'
+              orgId: 1
+              folder: ''
+              type: file
+              disableDeletion: false
+              editable: true
+              options:
+                path: /var/lib/grafana/dashboards/default
+        dashboards:
+          default:
+            k3s:
+              gnetId: 15282
+              revision: 1
+              datasource: Prometheus
+        datasources:
+          datasources.yaml:
+            apiVersion: 1
+            datasources:
+            - name: Prometheus
+              type: prometheus
+              url: https://prometheus.{{ .Values.domain }}
+              access: proxy
+              isDefault: true
+              jsonData:
+                tlsSkipVerify: true
+  destination:
+    server: {{ .Values.server }}
+    namespace: monitoring
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true

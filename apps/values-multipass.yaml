@@ -34,5 +34,3 @@ uptimeKuma:
   targetRevision: 2.21.2
 wgEasy:
   targetRevision: 0.1.0
-yourSpotify:
-  targetRevision: 0.0.1

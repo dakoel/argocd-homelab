@@ -1,4 +1,4 @@
-# argocd
+# argocd-homelab
 
 ## Create a SealedSecret
 

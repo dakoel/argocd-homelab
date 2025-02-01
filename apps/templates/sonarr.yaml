@@ -22,6 +22,8 @@ spec:
               paths:
                 - path: /
                   pathType: Prefix
+        persistence:
+          storageClass: longhorn
   destination:
     server: {{ .Values.server }}
     namespace: media-stack

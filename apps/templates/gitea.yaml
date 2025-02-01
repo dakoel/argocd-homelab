@@ -45,6 +45,7 @@ spec:
                   pathType: Prefix
         persistence:
           size: {{ .Values.gitea.diskSize }}
+          storageClass: longhorn
         gitea:
           admin:
             existingSecret: gitea-secret

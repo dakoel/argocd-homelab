@@ -22,6 +22,7 @@ spec:
               - prometheus.{{ .Values.domain }}
           persistentVolume:
             size: {{ .Values.prometheus.diskSize }}
+            storageClass: longhorn
   destination:
     server: {{ .Values.server }}
     namespace: monitoring

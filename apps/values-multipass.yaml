@@ -31,6 +31,8 @@ nextcloud:
 prometheus:
   diskSize: 2Gi
   targetRevision: 27.1.0
+prowlarr:
+  targetRevision: 1.0.0
 radarr:
   targetRevision: 1.1.1
 sealedSecrets:

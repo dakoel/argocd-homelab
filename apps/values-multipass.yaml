@@ -44,6 +44,6 @@ sealedSecrets:
 sonarr:
   targetRevision: 1.0.0
 uptimeKuma:
-  targetRevision: 1.0.0
+  targetRevision: 1.0.2
 wgEasy:
   targetRevision: 1.0.0

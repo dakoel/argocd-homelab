@@ -22,6 +22,8 @@ spec:
               paths:
                 - path: /
                   pathType: Prefix
+        volume:
+          storageClassName: longhorn
   destination:
     server: {{ .Values.server }}
     namespace: uptime-kuma

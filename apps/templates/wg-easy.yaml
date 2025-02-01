@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://raw.githubusercontent.com/hansehe/wg-easy-helm/master/helm/charts'
+    repoURL: 'https://dakoel.github.io/helm-charts'
     chart: wg-easy
     targetRevision: {{ .Values.wgEasy.targetRevision }}
     helm:

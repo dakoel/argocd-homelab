@@ -33,4 +33,4 @@ sealedSecrets:
 uptimeKuma:
   targetRevision: 1.0.0
 wgEasy:
-  targetRevision: 0.1.0
+  targetRevision: 1.0.0

@@ -3,7 +3,7 @@ clusterIp: 10.10.0.1
 domain: multipass.local
 server: 'https://kubernetes.default.svc'
 adguard:
-  targetRevision: 1.0.0
+  targetRevision: 1.0.2
 argocd:
   targetRevision: 7.7.16
 gitea:

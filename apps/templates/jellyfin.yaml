@@ -28,7 +28,7 @@ spec:
             size: {{ .Values.jellyfin.mediaDiskSize }}
   destination:
     server: {{ .Values.server }}
-    namespace: jellyfin
+    namespace: media-stack
   syncPolicy:
     automated:
       prune: true

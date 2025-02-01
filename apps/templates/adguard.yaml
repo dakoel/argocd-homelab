@@ -25,7 +25,7 @@ spec:
               - host: adguard.{{ .Values.domain }}
                 paths:
                   - path: /
-                    pathType: ImplementationSpecific
+                    pathType: Prefix
         bootstrapConfig:
           dns:
             rewrites:

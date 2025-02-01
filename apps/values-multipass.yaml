@@ -35,6 +35,8 @@ prowlarr:
   targetRevision: 1.0.0
 radarr:
   targetRevision: 1.1.1
+sabnzbd:
+  targetRevision: 1.0.0
 sealedSecrets:
   targetRevision: 2.17.1
 sonarr:

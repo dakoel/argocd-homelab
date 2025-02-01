@@ -24,6 +24,8 @@ spec:
               paths:
                 - path: /
                   pathType: Prefix
+        volume:
+          className: longhorn
   destination:
     server: {{ .Values.server }}
     namespace: wg-easy

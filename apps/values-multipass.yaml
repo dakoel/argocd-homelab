@@ -31,6 +31,8 @@ nextcloud:
 prometheus:
   diskSize: 2Gi
   targetRevision: 27.1.0
+radarr:
+  targetRevision: 1.1.0
 sealedSecrets:
   targetRevision: 2.17.1
 uptimeKuma:

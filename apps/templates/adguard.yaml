@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://helm-charts.rm3l.org'
+    repoURL: 'https://dakoel.github.io/helm-charts'
     chart: adguard-home
     targetRevision: {{ .Values.adguard.targetRevision }}
     helm:

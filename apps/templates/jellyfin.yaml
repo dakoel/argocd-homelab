@@ -24,7 +24,6 @@ spec:
                   pathType: Prefix
         persistence:
           media:
-            storageClass: longhorn
             size: {{ .Values.jellyfin.mediaDiskSize }}
   destination:
     server: {{ .Values.server }}

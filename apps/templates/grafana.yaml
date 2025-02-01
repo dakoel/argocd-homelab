@@ -38,7 +38,6 @@ spec:
             - grafana.{{ .Values.domain }}
         persistence:
           enabled: true
-          storageClassName: longhorn
           size: {{ .Values.grafana.diskSize }}
         admin:
           existingSecret: grafana-secret

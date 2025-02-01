@@ -20,7 +20,7 @@ jellyfin:
   mediaDiskSize: 2Gi
   targetRevision: 2.1.0
 jellyseerr:
-  targetRevision: 1.0.1
+  targetRevision: 1.0.2
 longhorn:
   targetRevision: 1.7.2
 navidrome:

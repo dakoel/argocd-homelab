@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://dirsigler.github.io/uptime-kuma-helm'
+    repoURL: 'https://dakoel.github.io/helm-charts'
     chart: uptime-kuma
     targetRevision: {{ .Values.uptimeKuma.targetRevision }}
     helm:

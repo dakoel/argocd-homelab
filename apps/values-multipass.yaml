@@ -19,6 +19,8 @@ grafana:
 jellyfin:
   mediaDiskSize: 2Gi
   targetRevision: 2.1.0
+jellyseerr:
+  targetRevision: 1.0.1
 longhorn:
   targetRevision: 1.7.2
 navidrome:

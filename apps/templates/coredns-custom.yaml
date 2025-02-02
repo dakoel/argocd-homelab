@@ -6,12 +6,6 @@ metadata:
   namespace: kube-system
 data:
   default.server: |
-    jellyfin.{{ .Values.domain }} {
-        hosts {
-              {{ .Values.clusterIp }} jellyfin.{{ .Values.domain }}
-              fallthrough
-        }
-    }
     prometheus.{{ .Values.domain }} {
         hosts {
               {{ .Values.clusterIp }} prometheus.{{ .Values.domain }}

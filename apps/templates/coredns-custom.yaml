@@ -6,9 +6,9 @@ metadata:
   namespace: kube-system
 data:
   default.server: |
-    prometheus.{{ .Values.domain }} {
+    prometheus {
         hosts {
-              {{ .Values.clusterIp }} prometheus.{{ .Values.domain }}
+              prometheus
               fallthrough
         }
     }

@@ -234,7 +234,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 4,
-              "legendFormat": "{{ "{{ namespace}}" }}",
+              "legendFormat": "{{ namespace}}",
               "metric": "network",
               "refId": "A",
               "step": 10

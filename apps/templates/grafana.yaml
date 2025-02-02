@@ -42,6 +42,11 @@ spec:
           size: {{ .Values.grafana.diskSize }}
         admin:
           existingSecret: grafana-secret
+        sidecar:
+          dashboards:
+            enabled: true
+            label: grafana_dashboard
+            folder: /var/lib/grafana/dashboards/default
         dashboardsConfigMap:
           grafana-dashboard: "1"
         datasources:

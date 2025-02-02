@@ -234,7 +234,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 4,
-              "legendFormat": "{{ namespace}}",
+              "legendFormat": "{{"{{"}} namespace{{"}}"}}",
               "metric": "network",
               "refId": "A",
               "step": 10
@@ -526,7 +526,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 4,
-              "legendFormat": "{{ namespace}}",
+              "legendFormat": "{{"{{"}} namespace{{"}}"}}",
               "metric": "network",
               "refId": "A",
               "step": 10
@@ -761,7 +761,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "{{ pod }}",
+              "legendFormat": "{{"{{"}} pod {{"}}"}}",
               "metric": "container_cpu",
               "refId": "A",
               "step": 10
@@ -865,7 +865,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "{{ pod }}",
+              "legendFormat": "{{"{{"}} pod {{"}}"}}",
               "metric": "container_memory_usage:sort_desc",
               "refId": "A",
               "step": 10
@@ -969,7 +969,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "-> {{ pod }}",
+              "legendFormat": "-> {{"{{"}} pod {{"}}"}}",
               "metric": "network",
               "refId": "A",
               "step": 10
@@ -984,7 +984,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "<- {{ pod }}",
+              "legendFormat": "<- {{"{{"}} pod {{"}}"}}",
               "metric": "network",
               "refId": "B",
               "step": 10
@@ -1102,7 +1102,7 @@ data:
               "hide": false,
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "pod: {{ pod }} | {{ container_name }}",
+              "legendFormat": "pod: {{"{{"}} pod {{"}}"}} | {{"{{"}} container_name {{"}}"}}",
               "metric": "container_cpu",
               "refId": "A",
               "step": 10
@@ -1117,7 +1117,7 @@ data:
               "hide": false,
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "docker: {{ node }} | {{ image }} ({{ name }})",
+              "legendFormat": "docker: {{"{{"}} node {{"}}"}} | {{"{{"}} image {{"}}"}} ({{"{{"}} name {{"}}"}})",
               "metric": "container_cpu",
               "refId": "B",
               "step": 10
@@ -1131,7 +1131,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "rkt: {{ node }} | {{ rkt_container_name }}",
+              "legendFormat": "rkt: {{"{{"}} node {{"}}"}} | {{"{{"}} rkt_container_name {{"}}"}}",
               "metric": "container_cpu",
               "refId": "C",
               "step": 10
@@ -1234,7 +1234,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "pod: {{ pod }} | {{ container_name }}",
+              "legendFormat": "pod: {{"{{"}} pod {{"}}"}} | {{"{{"}} container_name {{"}}"}}",
               "metric": "container_memory_usage:sort_desc",
               "refId": "A",
               "step": 10
@@ -1248,7 +1248,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "docker: {{ node }} | {{ image }} ({{ name }})",
+              "legendFormat": "docker: {{"{{"}} node {{"}}"}} | {{"{{"}} image {{"}}"}} ({{"{{"}} name {{"}}"}})",
               "metric": "container_memory_usage:sort_desc",
               "refId": "B",
               "step": 10
@@ -1262,7 +1262,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "rkt: {{ node }} | {{ rkt_container_name }}",
+              "legendFormat": "rkt: {{"{{"}} node {{"}}"}} | {{"{{"}} rkt_container_name {{"}}"}}",
               "metric": "container_memory_usage:sort_desc",
               "refId": "C",
               "step": 10
@@ -1366,7 +1366,7 @@ data:
               "hide": false,
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "-> pod: {{ pod }} | {{ container_name }}",
+              "legendFormat": "-> pod: {{"{{"}} pod {{"}}"}} | {{"{{"}} container_name {{"}}"}}",
               "metric": "network",
               "refId": "B",
               "step": 10
@@ -1381,7 +1381,7 @@ data:
               "hide": false,
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "<- pod: {{ pod }} | {{ container_name }}",
+              "legendFormat": "<- pod: {{"{{"}} pod {{"}}"}} | {{"{{"}} container_name {{"}}"}}",
               "metric": "network",
               "refId": "D",
               "step": 10
@@ -1396,7 +1396,7 @@ data:
               "hide": false,
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "-> docker: {{ node }} | {{ image }} ({{ name }})",
+              "legendFormat": "-> docker: {{"{{"}} node {{"}}"}} | {{"{{"}} image {{"}}"}} ({{"{{"}} name {{"}}"}})",
               "metric": "network",
               "refId": "A",
               "step": 10
@@ -1411,7 +1411,7 @@ data:
               "hide": false,
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "<- docker: {{ node }} | {{ image }} ({{ name }})",
+              "legendFormat": "<- docker: {{"{{"}} node {{"}}"}} | {{"{{"}} image {{"}}"}} ({{"{{"}} name {{"}}"}})",
               "metric": "network",
               "refId": "C",
               "step": 10
@@ -1426,7 +1426,7 @@ data:
               "hide": false,
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "-> rkt: {{ node }} | {{ rkt_container_name }}",
+              "legendFormat": "-> rkt: {{"{{"}} node {{"}}"}} | {{"{{"}} rkt_container_name {{"}}"}}",
               "metric": "network",
               "refId": "E",
               "step": 10
@@ -1441,7 +1441,7 @@ data:
               "hide": false,
               "interval": "10s",
               "intervalFactor": 5,
-              "legendFormat": "<- rkt: {{ node }} | {{ rkt_container_name }}",
+              "legendFormat": "<- rkt: {{"{{"}} node {{"}}"}} | {{"{{"}} rkt_container_name {{"}}"}}",
               "metric": "network",
               "refId": "F",
               "step": 10

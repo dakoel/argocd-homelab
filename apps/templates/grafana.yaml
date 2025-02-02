@@ -66,7 +66,7 @@ spec:
             datasources:
             - name: Prometheus
               type: prometheus
-              url: https://prometheus
+              url: https://prometheus.{{ .Values.domain }}
               access: proxy
               isDefault: true
               jsonData:

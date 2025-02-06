@@ -24,8 +24,8 @@ spec:
           storageClassName: longhorn
         config:
           endpoints:
-            - name: gatus
-              url: https://gatus.{{ .Values.domain }}
+            - name: adguard
+              url: https://adguard.{{ .Values.domain }}
               interval: 60s
               conditions:
                 - "[STATUS] == 200"

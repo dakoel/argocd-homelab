@@ -29,6 +29,8 @@ spec:
               interval: 60s
               conditions:
                 - "[STATUS] == 200"
+              client:
+                insecure: true
   destination:
     server: {{ .Values.server }}
     namespace: gatus

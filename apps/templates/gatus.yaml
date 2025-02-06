@@ -22,6 +22,13 @@ spec:
         persistence:
           enabled: true
           storageClassName: longhorn
+        config:
+          endpoints:
+            - name: gatus
+              url: https://gatus.{{ .Values.domain }}
+              interval: 60s
+              conditions:
+                - "[STATUS] == 200"
   destination:
     server: {{ .Values.server }}
     namespace: gatus

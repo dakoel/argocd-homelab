@@ -1,4 +1,21 @@
 ---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: gatus-secret
+  namespace: gatus
+spec:
+  encryptedData:
+    telegram-id: {{ .Values.gatus.telegramId }}
+    telegram-token: {{ .Values.gatus.telegramToken }}
+  template:
+    metadata:
+      creationTimestamp: null
+      name: gatus-secret
+      namespace: gatus
+    type: Opaque
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -19,10 +36,25 @@ spec:
           ingressClassName: traefik
           hosts:
             - gatus.{{ .Values.domain }}
+        env:
+          TELEGRAM_ID:
+            valueFrom:
+              secretKeyRef:
+                name: gatus-secret
+                key: telegram-id
+          TELEGRAM_TOKEN:
+            valueFrom:
+              secretKeyRef:
+                name: gatus-secret
+                key: telegram-token
         persistence:
           enabled: true
           storageClassName: longhorn
         config:
+          alerting:
+            telegram:
+              id: "$TELEGRAM_ID"
+              token: "$TELEGRAM_TOKEN"
           endpoints:
             - name: adguard
               url: https://adguard.{{ .Values.domain }}
@@ -31,6 +63,9 @@ spec:
                 - "[STATUS] == 200"
               client:
                 insecure: true
+              alerts:
+                - type: telegram
+                  send-on-resolved: true
   destination:
     server: {{ .Values.server }}
     namespace: gatus

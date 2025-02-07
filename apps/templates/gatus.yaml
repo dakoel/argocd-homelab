@@ -7,8 +7,8 @@ metadata:
   namespace: gatus
 spec:
   encryptedData:
-    telegram-id: {{ .Values.gatus.telegramId }}
-    telegram-token: {{ .Values.gatus.telegramToken }}
+    telegram-id: {{ .Values.gatus.encryptedTelegramId }}
+    telegram-token: {{ .Values.gatus.encryptedTelegramToken }}
   template:
     metadata:
       creationTimestamp: null

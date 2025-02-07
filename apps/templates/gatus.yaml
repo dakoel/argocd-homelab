@@ -53,8 +53,8 @@ spec:
         config:
           alerting:
             telegram:
-              id: "$TELEGRAM_ID"
-              token: "$TELEGRAM_TOKEN"
+              id: "${TELEGRAM_ID}"
+              token: "${TELEGRAM_TOKEN}"
           endpoints:
             - name: adguard
               url: https://adguard.{{ .Values.domain }}

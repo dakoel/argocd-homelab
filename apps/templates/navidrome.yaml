@@ -25,7 +25,7 @@ spec:
                     pathType: Prefix
   destination:
     server: {{ .Values.server }}
-    namespace: media-stack
+    namespace: navidrome
   syncPolicy:
     automated:
       prune: true

@@ -1,21 +1,4 @@
 ---
-apiVersion: bitnami.com/v1alpha1
-kind: SealedSecret
-metadata:
-  creationTimestamp: null
-  name: gatus-secret
-  namespace: gatus
-spec:
-  encryptedData:
-    telegram-id: {{ .Values.gatus.encryptedTelegramId }}
-    telegram-token: {{ .Values.gatus.encryptedTelegramToken }}
-  template:
-    metadata:
-      creationTimestamp: null
-      name: gatus-secret
-      namespace: gatus
-    type: Opaque
----
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -40,13 +23,13 @@ spec:
           TELEGRAM_ID:
             valueFrom:
               secretKeyRef:
-                name: gatus-secret
-                key: telegram-id
+                name: telegram-secret
+                key: id
           TELEGRAM_TOKEN:
             valueFrom:
               secretKeyRef:
-                name: gatus-secret
-                key: telegram-token
+                name: telegram-secret
+                key: token
         persistence:
           enabled: true
           storageClassName: longhorn
@@ -190,7 +173,7 @@ spec:
                 - type: telegram
   destination:
     server: {{ .Values.server }}
-    namespace: gatus
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true

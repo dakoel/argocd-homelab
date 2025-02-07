@@ -49,6 +49,7 @@ spec:
             folder: /var/lib/grafana/dashboards/default
         dashboardsConfigMap:
           grafana-dashboard: "1"
+        envFromSecret: telegram-secret
         datasources:
           datasources.yaml:
             apiVersion: 1
@@ -60,6 +61,23 @@ spec:
               isDefault: true
               jsonData:
                 tlsSkipVerify: true
+        alerting:
+          contactpoints.yaml:
+            secret:
+              apiVersion: 1
+              contactPoints:
+                  - orgId: 1
+                    name: Telegram
+                    receivers:
+                      - uid: ceccpbysa92pse
+                        type: telegram
+                        settings:
+                          bottoken: ${token}
+                          chatid: ${id}
+                          disable_notification: false
+                          disable_web_page_preview: false
+                          protect_content: false
+                        disableResolveMessage: false
   destination:
     server: {{ .Values.server }}
     namespace: monitoring

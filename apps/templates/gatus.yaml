@@ -56,7 +56,6 @@ spec:
               id: "${TELEGRAM_ID}"
               token: "${TELEGRAM_TOKEN}"
               default-alert:
-                description: "Health check failed"
                 send-on-resolved: true
                 failure-threshold: 3
                 success-threshold: 1
@@ -71,6 +70,118 @@ spec:
                 - type: telegram
             - name: argocd
               url: https://argocd.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: gatus
+              url: https://gatus.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: gitea
+              url: https://gitea.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: grafana
+              url: https://grafana.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: jellyfin
+              url: https://jellyfin.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: jellyseer
+              url: https://jellyseer.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: longhorn
+              url: https://longhorn.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: navidrome
+              url: https://navidrome.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: nextcloud
+              url: https://nextcloud.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: prometheus
+              url: https://prometheus.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: prowlarr
+              url: https://prowlarr.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: radarr
+              url: https://radarr.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: sabnzbd
+              url: https://sabnzbd.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: sonarr
+              url: https://sonarr.{{ .Values.domain }}
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: wireguard
+              url: https://wireguard.{{ .Values.domain }}
               conditions:
                 - "[STATUS] == 200"
               client:

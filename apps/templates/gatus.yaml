@@ -63,7 +63,14 @@ spec:
           endpoints:
             - name: adguard
               url: https://adguard.{{ .Values.domain }}
-              interval: 60s
+              conditions:
+                - "[STATUS] == 200"
+              client:
+                insecure: true
+              alerts:
+                - type: telegram
+            - name: argocd
+              url: https://argocd.{{ .Values.domain }}
               conditions:
                 - "[STATUS] == 200"
               client:

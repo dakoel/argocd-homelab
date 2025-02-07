@@ -108,8 +108,8 @@ spec:
                 insecure: true
               alerts:
                 - type: telegram
-            - name: jellyseer
-              url: https://jellyseer.{{ .Values.domain }}
+            - name: jellyseerr
+              url: https://jellyseerr.{{ .Values.domain }}
               conditions:
                 - "[STATUS] == 200"
               client:

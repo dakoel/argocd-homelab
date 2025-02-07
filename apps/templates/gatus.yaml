@@ -55,6 +55,11 @@ spec:
             telegram:
               id: "${TELEGRAM_ID}"
               token: "${TELEGRAM_TOKEN}"
+              default-alert:
+                description: "Health check failed"
+                send-on-resolved: true
+                failure-threshold: 3
+                success-threshold: 1
           endpoints:
             - name: adguard
               url: https://adguard.{{ .Values.domain }}
@@ -65,7 +70,6 @@ spec:
                 insecure: true
               alerts:
                 - type: telegram
-                  send-on-resolved: true
   destination:
     server: {{ .Values.server }}
     namespace: gatus

@@ -24,12 +24,12 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: telegram-secret
-                key: id
+                key: telegram-id
           TELEGRAM_TOKEN:
             valueFrom:
               secretKeyRef:
                 name: telegram-secret
-                key: token
+                key: telegram-token
         persistence:
           enabled: true
           storageClassName: longhorn

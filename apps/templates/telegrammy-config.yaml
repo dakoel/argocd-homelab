@@ -12,14 +12,14 @@ data:
     responseJobs:
 
       - trigger: "configuration"
-        command: "cat {{ .Values.env.TELEGRAMMY_CONFIG_PATH }}"
+        command: "cat /etc/telegrammy/config.yaml"
         message: "```\n%s```"
         parseMode: MarkdownV2
         escapeCharacters:
           - "`"
 
       - trigger: "reset"
-        command: "rm -f {{ .Values.telegrammy.chatGpt.conversationPath }}"
+        command: "rm -f /etc/telegrammy/conversation"
         message: "ChatGPT conversation reset"
 
     cronJobs:

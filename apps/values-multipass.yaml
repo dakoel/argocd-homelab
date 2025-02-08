@@ -52,7 +52,7 @@ sealedSecrets:
 sonarr:
   targetRevision: 1.0.1
 telegrammy:
-  targetRevision: 1.0.0
+  targetRevision: 1.0.1
 uptimeKuma:
   targetRevision: 1.0.1
 wgEasy:

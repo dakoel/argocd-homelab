@@ -1,0 +1,29 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: telegrammy-config
+data:
+  config.yaml: |
+    ---
+    shellPath: "/bin/bash"
+    pollInterval: 5
+
+    responseJobs:
+
+      - trigger: "configuration"
+        command: "cat {{ .Values.env.TELEGRAMMY_CONFIG_PATH }}"
+        message: "```\n%s```"
+        parseMode: MarkdownV2
+        escapeCharacters:
+          - "`"
+
+      - trigger: "reset"
+        command: "rm -f {{ .Values.telegrammy.chatGpt.conversationPath }}"
+        message: "ChatGPT conversation reset"
+
+    cronJobs:
+
+      - schedule: "20 16 * * *"
+        message: "Alive"
+        parseMode: HTML

@@ -51,6 +51,8 @@ sealedSecrets:
   targetRevision: 2.17.1
 sonarr:
   targetRevision: 1.0.1
+telegrammy:
+  targetRevision: 1.0.0
 uptimeKuma:
   targetRevision: 1.0.1
 wgEasy:

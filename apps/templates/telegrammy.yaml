@@ -25,7 +25,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://dakoel.github.io/helm-charts'
+    repoURL: 'https://dakoel.github.io/helm-homelab'
     chart: telegrammy
     targetRevision: {{ .Values.telegrammy.targetRevision }}
   destination:

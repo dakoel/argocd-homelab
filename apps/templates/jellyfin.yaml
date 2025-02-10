@@ -23,7 +23,7 @@ spec:
                 - path: /
                   pathType: Prefix
         persistence:
-          downloads:
+          media:
             existingClaim: media-stack-storage
   destination:
     server: {{ .Values.server }}

@@ -23,6 +23,9 @@ spec:
                 paths:
                   - path: /
                     pathType: Prefix
+        persistence:
+          config:
+            existingClaim: media-stack-storage
   destination:
     server: {{ .Values.server }}
     namespace: media-stack

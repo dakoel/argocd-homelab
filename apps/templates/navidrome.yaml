@@ -23,6 +23,15 @@ spec:
                 paths:
                   - path: /
                     pathType: Prefix
+        persistence:
+          config:
+            enabled: true
+            storageClass: longhorn
+          music:
+            enabled: true
+            storageClass: longhorn
+            mountPath: /music
+            size: {{ .Values.navidrome.musicDiskSize }}
   destination:
     server: {{ .Values.server }}
     namespace: media-stack

@@ -26,6 +26,7 @@ spec:
         persistence:
           downloads:
             enabled: true
+            mountPath: /media
             existingClaim: media-stack-storage
   destination:
     server: {{ .Values.server }}

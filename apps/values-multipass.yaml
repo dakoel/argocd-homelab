@@ -38,6 +38,8 @@ prometheus:
   targetRevision: 27.1.0
 prowlarr:
   targetRevision: 0.0.1
+qbittorrent:
+  targetRevision: 0.0.1
 radarr:
   targetRevision: 0.0.1
 sabnzbd:

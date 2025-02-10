@@ -67,14 +67,6 @@ spec:
                 insecure: true
               alerts:
                 - type: telegram
-            - name: gitea
-              url: https://gitea.{{ .Values.domain }}
-              conditions:
-                - "[STATUS] == 200"
-              client:
-                insecure: true
-              alerts:
-                - type: telegram
             - name: grafana
               url: https://grafana.{{ .Values.domain }}
               conditions:
